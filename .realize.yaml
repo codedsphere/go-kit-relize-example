@@ -1,0 +1,26 @@
+settings:
+  legacy:
+    force: false
+    interval: 0s
+schema:
+- name: hello
+  path: hello/cmd
+  commands:
+    clean:
+      status: true
+    vet:
+      status: true
+    install:
+      status: true
+    build:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - hello
+    ignored_paths:
+    - .git
+    - .realize

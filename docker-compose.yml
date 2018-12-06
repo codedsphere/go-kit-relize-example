@@ -1,0 +1,14 @@
+version: "2"
+services:
+  hello:
+    build:
+      context: .
+      dockerfile: hello/Dockerfile
+    command:  watcher -run hello/hello/cmd  -watch hello/hello
+    restart: always
+    volumes:
+    - .:/go/src/hello
+    container_name: hello
+    ports:
+    - 8800:8081
+    - 8801:8082
